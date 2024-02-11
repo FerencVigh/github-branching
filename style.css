@@ -9,3 +9,19 @@
 html {
   box-sizing: border-box;
 }
+
+.header__burger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.header__burger-button .header__burger-button-line {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
