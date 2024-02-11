@@ -11,6 +11,7 @@ html {
 }
 
 .header__burger-button {
+  border: 1px solid grey;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,10 +19,35 @@ html {
   padding: 5px;
   width: 30px;
   height: 30px;
+
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+.header__burger-button--active {
+  background-color: red;
 }
 
 .header__burger-button .header__burger-button-line {
   height: 2px;
   width: 100%;
   background-color: black;
+  transition: transform 0.1s linear, width 0.1s linear, opacity 0.1s ease-out;
+}
+.header__burger-button.header__burger-button--active
+  .header__burger-button-line:first-child {
+  transform: rotate(40deg) scaleX(1.41);
+  transform-origin: left;
+}
+
+.header__burger-button.header__burger-button--active
+  .header__burger-button-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger-button.header__burger-button--active
+  .header__burger-button-line:last-child {
+  transform: rotate(-40deg) scaleX(1.41);
+  transform-origin: left;
 }
